@@ -1,0 +1,89 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.h-burger{
+    margin: 2em;
+    position: relative;
+}
+
+.h-burger input[type="checkbox"]{
+    width: 38px;
+    height: 38px;
+    position:absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 2;
+    opacity: 0;
+
+}
+
+.h-lines{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 1;
+}
+
+.h-lines span.line{
+
+    height: 4px;
+    width: 100%;
+    border-radius: 10rem;
+    display: block;
+    background:black;
+
+
+}
+
+.h-menu{
+  padding-top: 60px;
+  padding-left: 5px;
+  background-color: rgba(0, 0, 0, 0.855);
+  color: white;
+  transform: translateX(-110%);
+  transition: opacity 1s;
+  transition: transform 1s ease-in-out;
+}
+
+.h-menu ul li{
+    opacity: 1;
+    padding-bottom: 1em;
+
+}
+
+.h-burger input[type="checkbox"]:checked ~ .h-menu{
+    transform: translateX(0%);
+}
+
+.h-burger input[type="checkbox"]:checked ~  .h-lines span.line{
+    background: white;
+}
+
+.h-lines span.line1{
+    transform-origin:0% 0%;
+}
+.h-lines span.line3{
+    transform-origin:0% 100%;
+}
+
+.h-burger input[type="checkbox"]:checked ~ .h-lines span.line1{
+    transform: rotate(45deg);
+    transition: transform 1s ease-in-out;
+}
+.h-burger input[type="checkbox"]:checked ~ .h-lines span.line2{
+    display: none;
+}
+.h-burger input[type="checkbox"]:checked ~ .h-lines span.line3{
+    transform: rotate(-45deg);
+    transition: transform 1s ease-in-out;
+}
+
+
